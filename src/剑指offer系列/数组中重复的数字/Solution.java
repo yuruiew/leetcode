@@ -8,7 +8,7 @@ public class Solution {
      * @param nums
      * @return
      */
-    public int findRepeatNumber(int[] nums) {
+    public int findRepeatNumberS1(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
             Integer key = map.get(num);
@@ -21,4 +21,22 @@ public class Solution {
         }
         return 0;
     }
+
+    /**
+     * 使用数组模拟哈希,如果对应位置数值大于1,说明该值为重复值
+     * @param nums
+     * @return
+     */
+    public int findRepeatNumberS2(int[] nums) {
+        int[] numCount = new int[nums.length];
+        for (int num : nums) {
+            numCount[num] ++;
+            if (numCount[num] > 1){
+                return num;
+            }
+        }
+        return 0;
+    }
+
+
 }
