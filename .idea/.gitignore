@@ -18,6 +18,8 @@
 *.ipr
 *.iml
 *.iws
+*.xml
+*.class
 .idea/
 
 # Maven
